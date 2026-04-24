@@ -5,6 +5,7 @@ import './CARTab.css';
  * CARTab Component - Aba de dados ambientais (CAR)
  */
 function CARTab({ property }) {
+  if (!property) return null;
   const car = property.car_dados;
   const reservaDeficit = car.reserva_legal_exigida - car.reserva_legal_pct;
   const hasDeficit = reservaDeficit > 0;

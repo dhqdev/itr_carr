@@ -6,6 +6,7 @@ import './ProfileHeader.css';
  * ProfileHeader Component - Cabeçalho com dados do proprietário
  */
 function ProfileHeader({ property }) {
+  if (!property) return null;
   const status = statusConfig[property.status_auditoria];
 
   return (

@@ -1,4 +1,4 @@
-const { properties } = require('../../_data/staticData');
+const { properties } = require('../_data/staticData');
 
 module.exports = (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

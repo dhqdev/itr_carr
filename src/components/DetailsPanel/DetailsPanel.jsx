@@ -16,6 +16,15 @@ import './DetailsPanel.css';
 function DetailsPanel({ property }) {
   const [activeTab, setActiveTab] = useState('itr'); // 'itr' ou 'car'
 
+  if (!property) {
+    return (
+      <div className="details-panel" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9ca3af', fontSize: '14px', flexDirection: 'column', gap: '8px' }}>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <span>Selecione uma propriedade</span>
+      </div>
+    );
+  }
+
   return (
     <div className="details-panel">
       {/* Header fixo com perfil */}

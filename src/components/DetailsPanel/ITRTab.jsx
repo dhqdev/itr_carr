@@ -5,6 +5,7 @@ import './ITRTab.css';
  * ITRTab Component - Aba de dados fiscais (ITR)
  */
 function ITRTab({ property }) {
+  if (!property) return null;
   const itr = property.itr_dados;
   const percentageDiff = ((itr.vtn_declarado_hectare / itr.vtn_referencia_prefeitura) * 100 - 100).toFixed(1);
   const isSubdeclarado = percentageDiff < -5;

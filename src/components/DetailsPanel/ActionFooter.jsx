@@ -7,6 +7,8 @@ import './ActionFooter.css';
 function ActionFooter({ property }) {
   const [isLoading, setIsLoading] = useState(false);
 
+  if (!property) return null;
+
   const handleSolicitarDocumentos = () => {
     setIsLoading(true);
     // Simula chamada de API
