@@ -84,7 +84,7 @@
 }
 
 .reserva-percentage.atual {
-  color: #3b82f6;
+  color: #1e4f8c;
 }
 
 .reserva-percentage.exigida {
@@ -193,8 +193,8 @@
 
 /* Cards especiais */
 .data-card.alert {
-  border: 2px solid #fecaca;
-  background: linear-gradient(to bottom, white, #fef2f2);
+  border: 1px solid #fca5a5;
+  background: #fff9f9;
 }
 
 .data-card.warning-card {

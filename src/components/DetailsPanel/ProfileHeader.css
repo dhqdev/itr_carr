@@ -12,8 +12,8 @@
 .profile-avatar {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 8px;
+  background: #1e4f8c;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +84,7 @@
   width: 24px;
   height: 24px;
   stroke-width: 1.5;
-  color: #6366f1;
+  color: #60a5fa;
   flex-shrink: 0;
 }
 

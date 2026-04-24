@@ -17,8 +17,8 @@
 }
 
 .property-card.selected {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+  border-color: #1e4f8c;
+  box-shadow: 0 0 0 3px rgba(30, 79, 140, 0.1);
 }
 
 /* Barra lateral colorida */
@@ -131,7 +131,7 @@
   right: 8px;
   width: 20px;
   height: 20px;
-  background: #6366f1;
+  background: #1e4f8c;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -145,7 +145,7 @@
 }
 
 .property-card:focus {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #1e4f8c;
   outline-offset: 2px;
 }
 
@@ -161,8 +161,8 @@
 }
 
 .property-card.selected {
-  border-color: #667eea;
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+  border-color: #1e4f8c;
+  box-shadow: 0 0 0 3px rgba(30, 79, 140, 0.12);
 }
 
 /* Barra lateral colorida */
@@ -266,13 +266,13 @@
   right: 10px;
   width: 24px;
   height: 24px;
-  background: #667eea;
+  background: #1e4f8c;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 2px 8px rgba(30, 79, 140, 0.3);
 }
 
 .property-card-selected-icon svg {
@@ -282,7 +282,7 @@
 
 /* Acessibilidade */
 .property-card:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid #1e4f8c;
   outline-offset: 2px;
 }
 

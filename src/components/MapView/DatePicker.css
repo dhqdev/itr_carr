@@ -25,7 +25,7 @@
 .date-picker-label svg {
   width: 16px;
   height: 16px;
-  color: #667eea;
+  color: #1e4f8c;
 }
 
 .date-picker-select {
@@ -47,14 +47,14 @@
 }
 
 .date-picker-select:hover {
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #1e4f8c;
+  box-shadow: 0 0 0 3px rgba(30, 79, 140, 0.1);
 }
 
 .date-picker-select:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+  border-color: #1e4f8c;
+  box-shadow: 0 0 0 3px rgba(30, 79, 140, 0.15);
 }
 
 .date-picker-hint {

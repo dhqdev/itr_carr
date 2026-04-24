@@ -32,9 +32,9 @@
 
 .search-input:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: #1e4f8c;
   background: rgba(255,255,255,0.08);
-  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+  box-shadow: 0 0 0 3px rgba(30,79,140,0.15);
 }
 
 .search-input::placeholder {
@@ -95,9 +95,9 @@
 
 .search-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #1e4f8c;
   background: white;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 3px rgba(30, 79, 140, 0.1);
 }
 
 .search-input::placeholder {

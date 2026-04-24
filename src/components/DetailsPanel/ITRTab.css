@@ -13,8 +13,8 @@
 }
 
 .data-card.highlight {
-  border: 2px solid #10b981;
-  background: linear-gradient(to bottom, white, #f0fdf4);
+  border: 1px solid #86efac;
+  background: #f0fdf4;
 }
 
 .card-header {
@@ -136,7 +136,7 @@
 .gu-percentage {
   font-size: 24px;
   font-weight: 700;
-  color: #667eea;
+  color: #1e4f8c;
 }
 
 .gu-bar {
@@ -261,7 +261,7 @@
 /* Observação */
 .data-card.observacao {
   background: #f9fafb;
-  border-left: 4px solid #667eea;
+  border-left: 3px solid #1e4f8c;
 }
 
 .data-card.observacao p {

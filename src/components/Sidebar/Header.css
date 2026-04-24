@@ -47,8 +47,8 @@
 
 .municipio-dropdown:focus {
   outline: none;
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+  border-color: #1e4f8c;
+  box-shadow: 0 0 0 3px rgba(30,79,140,0.2);
 }
 
 .municipio-dropdown option {

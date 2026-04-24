@@ -46,8 +46,8 @@
 }
 
 .tab-btn.active {
-  color: #6366f1;
-  border-bottom-color: #6366f1;
+  color: #1e4f8c;
+  border-bottom-color: #1e4f8c;
 }
 
 /* Conteúdo scrollável */
@@ -106,8 +106,8 @@
 }
 
 .tab-btn.active {
-  color: #667eea;
-  border-bottom-color: #667eea;
+  color: #1e4f8c;
+  border-bottom-color: #1e4f8c;
   background: white;
 }
 
