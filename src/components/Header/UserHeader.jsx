@@ -25,6 +25,13 @@ const UserHeader = ({ user, onLogout }) => {
 
   return (
     <div className="user-header">
+      {/* Brand / Logo */}
+      <div className="user-header-brand">
+        <div className="user-header-logo">ITR</div>
+        <span className="user-header-title">CAR</span>
+        <span className="user-header-subtitle">Auditoria Inteligente</span>
+      </div>
+
       <div className="user-info-container">
         <button 
           className="user-trigger"
@@ -41,7 +48,7 @@ const UserHeader = ({ user, onLogout }) => {
             <span className="user-role">{user.role}</span>
           </div>
           <ChevronDown 
-            size={20} 
+            size={16} 
             className={`chevron ${showDropdown ? 'open' : ''}`}
           />
         </button>

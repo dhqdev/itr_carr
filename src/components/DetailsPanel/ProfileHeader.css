@@ -1,11 +1,100 @@
 .profile-header {
-  padding: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 16px;
+  background: #0f172a;
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+  flex-shrink: 0;
 }
+
+/* Avatar */
+.profile-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Informações */
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 3px 0;
+  color: #f1f5f9;
+}
+
+.profile-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.profile-separator {
+  color: #334155;
+}
+
+.profile-doc {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* Badge de status */
+.profile-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+}
+
+.profile-status-badge svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* Propriedade */
+.profile-property {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.profile-property svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.5;
+  color: #6366f1;
+  flex-shrink: 0;
+}
+
+.profile-property > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+
 
 /* Avatar */
 .profile-avatar {

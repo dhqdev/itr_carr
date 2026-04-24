@@ -2,11 +2,46 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 12px 20px;
-  background: white;
-  border-bottom: 1px solid #e2e8f0;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+  background: #0f172a;
+  border-bottom: none;
   z-index: 100;
+  flex-shrink: 0;
+}
+
+.user-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-header-logo {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.user-header-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: 0.3px;
+}
+
+.user-header-subtitle {
+  font-size: 11px;
+  color: #64748b;
+  margin-left: 2px;
 }
 
 .user-info-container {
@@ -16,30 +51,30 @@
 .user-trigger {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 8px 12px;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  gap: 10px;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .user-trigger:hover {
-  background: #f7fafc;
-  border-color: #cbd5e0;
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.2);
 }
 
 .user-avatar {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
   flex-shrink: 0;
 }
 
@@ -51,22 +86,22 @@
 }
 
 .user-name {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  color: #1a202c;
+  color: #f1f5f9;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 180px;
+  max-width: 160px;
 }
 
 .user-role {
-  font-size: 12px;
-  color: #718096;
+  font-size: 11px;
+  color: #94a3b8;
 }
 
 .chevron {
-  color: #a0aec0;
+  color: #64748b;
   transition: transform 0.2s;
 }
 

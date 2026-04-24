@@ -30,7 +30,7 @@ body {
 .app-desktop {
   display: grid;
   grid-template-columns: 25% 50% 25%;
-  height: calc(100vh - 65px);
+  height: calc(100vh - 56px);
   width: 100vw;
   overflow: hidden;
 }
@@ -45,7 +45,7 @@ body {
 .app-mobile {
   display: none;
   flex-direction: column;
-  height: calc(100vh - 65px);
+  height: calc(100vh - 56px);
   width: 100vw;
   overflow: hidden;
   position: relative;
@@ -65,12 +65,11 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 64px;
-  background: #fff;
-  border-top: 1px solid #e5e7eb;
+  height: 60px;
+  background: #0f172a;
+  border-top: 1px solid rgba(255,255,255,0.06);
   display: flex;
   z-index: 9999;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
 }
 
 .mobile-tab-btn {
@@ -82,16 +81,18 @@ body {
   gap: 4px;
   border: none;
   background: transparent;
-  color: #9ca3af;
-  font-size: 11px;
-  font-weight: 500;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 600;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.18s;
   padding: 8px 4px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
 .mobile-tab-btn.active {
-  color: #3b82f6;
+  color: #818cf8;
 }
 
 .mobile-tab-btn svg {
