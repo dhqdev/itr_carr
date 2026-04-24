@@ -4,7 +4,7 @@
  * admin123, auditor123, analista123
  */
 
-const users = [
+const users = [ 
   {
     id: 1,
     username: 'admin',
