@@ -1,8 +1,14 @@
 /**
  * GET /api/layers/linha-amarela
- * Retorna todos os polígonos da Linha Amarela (sem filtro de propriedade).
- * Dados embutidos — não depende de fs no Vercel.
+ * GET /api/layers/linha-amarela?propertyId=prop_001  (filtrado por propriedade)
+ * Dados embutidos — sem fs.readFileSync (não funciona no Vercel).
  */
+
+const propertyToLinhaAmarelaIds = {
+  prop_001: ['3708083'],
+  prop_002: ['1087945'],
+  prop_005: ['606675']
+};
 
 const linhaAmarelaGeoJSON = {
   type: 'FeatureCollection',
@@ -74,6 +80,18 @@ const linhaAmarelaGeoJSON = {
 module.exports = (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   if (req.method !== 'GET') return res.status(405).json({ error: 'Método não permitido' });
+
+  const { propertyId } = req.query;
+
+  if (propertyId) {
+    const imovelIds = (propertyToLinhaAmarelaIds[propertyId] || []).map(String);
+    const features = imovelIds.length === 0
+      ? []
+      : linhaAmarelaGeoJSON.features.filter((f) =>
+          imovelIds.includes(String(f.properties.identificador_lote))
+        );
+    return res.status(200).json({ ...linhaAmarelaGeoJSON, features });
+  }
+
   return res.status(200).json(linhaAmarelaGeoJSON);
 };
-

@@ -252,7 +252,7 @@ function RealMapView({ property, isVisible = true }) {
       };
     }
 
-    fetch(`${API_BASE}/api/properties/${property.id}/layers/linha-amarela`)
+    fetch(`${API_BASE}/api/layers/linha-amarela?propertyId=${property.id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Falha ao carregar camada Linha Amarela');
