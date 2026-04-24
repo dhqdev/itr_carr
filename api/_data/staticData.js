@@ -6,7 +6,7 @@
 
 const users = [ 
   {
-    id: 1,
+    id: 1, 
     username: 'admin',
     password: '$2b$10$qBYqg4zgYOR.7eKoOz1DquHRxrgOD1gP1aCtL8kfjjhsM5RTMvQUy',
     name: 'Administrador Sistema',
