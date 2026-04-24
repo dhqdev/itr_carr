@@ -1,291 +1,106 @@
+/* ============================================================
+   PROPERTY CARD — tema escuro (sidebar navy)
+   ============================================================ */
+
 .property-card {
-  position: relative;
   display: flex;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 14px;
   cursor: pointer;
-  transition: all 0.18s ease;
-  border: 1.5px solid #f1f5f9;
-  box-shadow: none;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.15s;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .property-card:hover {
-  border-color: #e2e8f0;
-  box-shadow: 0 4px 16px rgba(15,23,42,0.06);
-  transform: translateY(-1px);
+  background: rgba(255,255,255,0.05);
 }
 
 .property-card.selected {
-  border-color: #1e4f8c;
-  box-shadow: 0 0 0 3px rgba(30, 79, 140, 0.1);
+  background: rgba(30,79,140,0.3);
+  border-left: 3px solid #2563ab;
+  padding-left: 11px;
 }
 
-/* Barra lateral colorida */
-.property-card-indicator {
-  width: 3px;
+.property-card-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  background: rgba(30,79,140,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  border-radius: 0 2px 2px 0;
+  margin-top: 1px;
 }
 
-/* Conteúdo */
+.property-card-icon svg {
+  width: 16px;
+  height: 16px;
+  color: #60a5fa;
+}
+
 .property-card-content {
   flex: 1;
-  padding: 12px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
   min-width: 0;
 }
 
-/* Header */
-.property-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 8px;
-}
-
 .property-name {
   font-size: 13px;
   font-weight: 600;
-  color: #0f172a;
-  margin: 0;
-  line-height: 1.35;
-  flex: 1;
+  color: #f1f5f9;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 3px;
 }
 
-.property-badge {
-  padding: 2px 7px;
-  border-radius: 20px;
-  font-size: 9px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-/* Proprietário */
-.property-owner {
+.property-meta {
   display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-.owner-name {
-  font-size: 12px;
-  color: #475569;
-  font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.owner-doc {
-  font-size: 10px;
-  color: #94a3b8;
-  font-family: 'SF Mono', 'Fira Code', monospace;
-}
-
-/* Métricas */
-.property-metrics {
-  display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
-.metric {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+.property-area {
   font-size: 11px;
   color: #64748b;
-  font-weight: 500;
-}
-
-.metric svg {
-  width: 12px;
-  height: 12px;
-  stroke-width: 2;
-  flex-shrink: 0;
-}
-
-.metric.highlight {
-  color: #10b981;
-  font-weight: 600;
-}
-
-.metric.warning {
-  color: #f59e0b;
-  font-weight: 600;
-}
-
-/* Ícone de selecionado */
-.property-card-selected-icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 20px;
-  height: 20px;
-  background: #1e4f8c;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.property-card-selected-icon svg {
-  width: 11px;
-  height: 11px;
-}
-
-.property-card:focus {
-  outline: 2px solid #1e4f8c;
-  outline-offset: 2px;
-}
-
-.property-card:focus:not(:focus-visible) {
-  outline: none;
-}
-
-
-.property-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  border-color: #e5e7eb;
-}
-
-.property-card.selected {
-  border-color: #1e4f8c;
-  box-shadow: 0 0 0 3px rgba(30, 79, 140, 0.12);
-}
-
-/* Barra lateral colorida */
-.property-card-indicator {
-  width: 4px;
-  flex-shrink: 0;
-}
-
-/* Conteúdo */
-.property-card-content {
-  flex: 1;
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Header */
-.property-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.property-name {
-  font-size: 15px;
-  font-weight: 600;
-  color: #111827;
-  margin: 0;
-  line-height: 1.3;
-  flex: 1;
 }
 
 .property-badge {
-  padding: 3px 8px;
-  border-radius: 4px;
   font-size: 10px;
   font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
-  white-space: nowrap;
+}
+
+.property-badge.regular {
+  background: rgba(34,197,94,0.15);
+  color: #4ade80;
+}
+
+.property-badge.irregular {
+  background: rgba(239,68,68,0.15);
+  color: #f87171;
+}
+
+.property-badge.pendente {
+  background: rgba(234,179,8,0.15);
+  color: #facc15;
+}
+
+.property-card-arrow {
+  color: #334155;
   flex-shrink: 0;
+  margin-top: 4px;
+  transition: color 0.15s;
 }
 
-/* Proprietário */
-.property-owner {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.owner-name {
-  font-size: 13px;
-  color: #374151;
-  font-weight: 500;
-}
-
-.owner-doc {
-  font-size: 11px;
-  color: #9ca3af;
-  font-family: 'Courier New', monospace;
-}
-
-/* Métricas */
-.property-metrics {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.metric {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  color: #6b7280;
-  font-weight: 500;
-}
-
-.metric svg {
-  width: 14px;
-  height: 14px;
-  stroke-width: 2;
-}
-
-.metric.highlight {
-  color: #10b981;
-  font-weight: 600;
-}
-
-.metric.warning {
-  color: #f59e0b;
-  font-weight: 600;
-}
-
-/* Ícone de selecionado */
-.property-card-selected-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 24px;
-  height: 24px;
-  background: #1e4f8c;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 2px 8px rgba(30, 79, 140, 0.3);
-}
-
-.property-card-selected-icon svg {
-  width: 14px;
-  height: 14px;
-}
-
-/* Acessibilidade */
-.property-card:focus {
-  outline: 2px solid #1e4f8c;
-  outline-offset: 2px;
-}
-
-.property-card:focus:not(:focus-visible) {
-  outline: none;
+.property-card:hover .property-card-arrow,
+.property-card.selected .property-card-arrow {
+  color: #64748b;
 }

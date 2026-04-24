@@ -1,136 +1,75 @@
+/* ============================================================
+   SIDEBAR HEADER / MUNICÍPIO DROPDOWN — tema escuro
+   ============================================================ */
+
 .sidebar-header {
-  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
   background: #0f172a;
-  color: white;
-  border-bottom: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   flex-shrink: 0;
 }
 
-/* Logo - oculta no sidebar pois já aparece no UserHeader */
 .header-logo {
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
 }
 
-/* Dropdown */
-.header-selector label {
-  display: block;
-  font-size: 10px;
+.header-logo-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.header-logo-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #f1f5f9;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.header-logo-sub {
+  font-size: 10px;
+  font-weight: 400;
   color: #64748b;
-  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.header-selector {
+  flex: 1;
+  min-width: 0;
 }
 
 .municipio-dropdown {
   width: 100%;
-  padding: 9px 12px;
-  background: rgba(255,255,255,0.06);
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.07);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 600;
+  border-radius: 7px;
   color: #f1f5f9;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.18s;
+  -webkit-appearance: none;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 32px;
-}
-
-.municipio-dropdown:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.18);
 }
 
 .municipio-dropdown:focus {
   outline: none;
-  border-color: #1e4f8c;
+  border-color: #2563ab;
+  background: rgba(255,255,255,0.1);
   box-shadow: 0 0 0 3px rgba(30,79,140,0.2);
 }
 
 .municipio-dropdown option {
   background: #1e293b;
   color: #f1f5f9;
-}
-
-
-/* Logo */
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.logo-icon {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.logo-icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.logo-text h1 {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: 0.5px;
-}
-
-.logo-text span {
-  font-size: 11px;
-  opacity: 0.9;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 500;
-}
-
-/* Dropdown */
-.header-selector label {
-  display: block;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 6px;
-  opacity: 0.9;
-  font-weight: 500;
-}
-
-.municipio-dropdown {
-  width: 100%;
-  padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #374151;
-  cursor: pointer;
-  transition: all 0.2s;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23374151' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 36px;
-}
-
-.municipio-dropdown:hover {
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.municipio-dropdown:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
 }

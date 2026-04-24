@@ -1,9 +1,13 @@
+/* ============================================================
+   DETAILS PANEL — tema claro
+   ============================================================ */
+
 .details-panel {
   display: flex;
   flex-direction: column;
   height: 100%;
   background: #fff;
-  border-left: 1px solid #f1f5f9;
+  border-left: 1px solid #e2e8f0;
   overflow: hidden;
 }
 
@@ -11,7 +15,7 @@
 .details-tabs {
   display: flex;
   background: #fff;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
   padding: 0 12px;
   flex-shrink: 0;
 }
@@ -21,23 +25,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 12px 8px;
+  gap: 5px;
+  padding: 11px 6px;
   border: none;
   background: transparent;
   cursor: pointer;
-  transition: all 0.18s;
+  transition: color 0.15s;
   color: #94a3b8;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 600;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
   letter-spacing: 0.2px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .tab-btn svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   stroke-width: 2;
 }
 
@@ -54,8 +59,10 @@
 .details-content {
   flex: 1;
   overflow-y: auto;
-  padding: 16px;
+  overflow-x: hidden;
+  padding: 14px 16px;
   background: #f8fafc;
+  -webkit-overflow-scrolling: touch;
 }
 
 .details-content > * {
@@ -65,72 +72,4 @@
 @keyframes fadeSlideIn {
   from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-
-/* Tabs de navegação */
-.details-tabs {
-  display: flex;
-  background: white;
-  border-bottom: 2px solid #e5e7eb;
-  padding: 0 16px;
-}
-
-.tab-btn {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 12px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.2s;
-  color: #6b7280;
-  font-size: 13px;
-  font-weight: 600;
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
-}
-
-.tab-btn svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 2;
-}
-
-.tab-btn:hover {
-  color: #374151;
-  background: #f9fafb;
-}
-
-.tab-btn.active {
-  color: #1e4f8c;
-  border-bottom-color: #1e4f8c;
-  background: white;
-}
-
-/* Conteúdo scrollável */
-.details-content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 20px;
-  background: #f9fafb;
-}
-
-/* Animação ao trocar de tab */
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.details-content > * {
-  animation: fadeSlideIn 0.3s ease-out;
 }

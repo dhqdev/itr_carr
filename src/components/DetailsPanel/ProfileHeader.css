@@ -1,198 +1,127 @@
+/* ============================================================
+   PROFILE HEADER — tema claro (painel de detalhes)
+   ============================================================ */
+
 .profile-header {
-  padding: 16px;
-  background: #0f172a;
-  color: white;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #fff;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  flex-shrink: 0;
+  gap: 10px;
 }
 
-/* Avatar */
+.profile-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
 .profile-avatar {
   width: 44px;
   height: 44px;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #1e4f8c;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  font-weight: 700;
-  color: white;
+  flex-shrink: 0;
+  color: #fff;
 }
 
-/* Informações */
+.profile-avatar svg {
+  width: 22px;
+  height: 22px;
+}
+
 .profile-info {
   flex: 1;
+  min-width: 0;
 }
 
 .profile-name {
   font-size: 15px;
   font-weight: 700;
-  margin: 0 0 3px 0;
-  color: #f1f5f9;
+  color: #0f172a;
+  margin-bottom: 3px;
+  line-height: 1.3;
 }
 
 .profile-meta {
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-wrap: wrap;
+}
+
+.profile-status-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.profile-status-badge.regular {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.profile-status-badge.irregular {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.profile-status-badge.pendente {
+  background: #fef9c3;
+  color: #b45309;
+}
+
+.profile-property {
   font-size: 11px;
   color: #64748b;
 }
 
-.profile-separator {
-  color: #334155;
+.profile-actions {
+  display: flex;
+  gap: 6px;
 }
 
-.profile-doc {
-  font-family: 'SF Mono', 'Fira Code', monospace;
-}
-
-/* Badge de status */
-.profile-status-badge {
-  display: inline-flex;
+.profile-action-btn {
+  padding: 6px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+  display: flex;
   align-items: center;
   gap: 5px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  align-self: flex-start;
+  border: none;
 }
 
-.profile-status-badge svg {
+.profile-action-btn.primary {
+  background: #1e4f8c;
+  color: #fff;
+}
+
+.profile-action-btn.primary:hover {
+  background: #1a4278;
+}
+
+.profile-action-btn.secondary {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.profile-action-btn.secondary:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.profile-action-btn svg {
   width: 13px;
   height: 13px;
-}
-
-/* Propriedade */
-.profile-property {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.07);
-}
-
-.profile-property svg {
-  width: 24px;
-  height: 24px;
-  stroke-width: 1.5;
-  color: #60a5fa;
-  flex-shrink: 0;
-}
-
-.profile-property > div {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-
-
-/* Avatar */
-.profile-avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: 700;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Informações */
-.profile-info {
-  flex: 1;
-}
-
-.profile-name {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0 0 4px 0;
-  letter-spacing: 0.3px;
-}
-
-.profile-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  opacity: 0.9;
-}
-
-.profile-separator {
-  opacity: 0.5;
-}
-
-.profile-doc {
-  font-family: 'Courier New', monospace;
-  font-weight: 500;
-}
-
-/* Badge de status */
-.profile-status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  align-self: flex-start;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.profile-status-badge svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* Propriedade */
-.profile-property {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.profile-property svg {
-  width: 32px;
-  height: 32px;
-  stroke-width: 2;
-  opacity: 0.9;
-  flex-shrink: 0;
-}
-
-.profile-property > div {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.profile-property strong {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.profile-property span {
-  font-size: 12px;
-  opacity: 0.85;
 }
