@@ -192,9 +192,26 @@ function coerceToMonthValue(input) {
 }
 
 /**
+ * Força o Leaflet a recalcular o tamanho do container.
+ * Necessário quando o mapa é renderizado dentro de display:none (mobile tabs).
+ */
+function MapResizer({ isVisible }) {
+  const map = useMap();
+  useEffect(() => {
+    if (isVisible) {
+      const timer = setTimeout(() => {
+        map.invalidateSize({ animate: false });
+      }, 120);
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible, map]);
+  return null;
+}
+
+/**
  * Componente de Mapa Real com geometrias do banco de dados
  */
-function RealMapView({ property }) {
+function RealMapView({ property, isVisible = true }) {
   const [polygonCoords, setPolygonCoords] = useState(null); // [lng, lat]
   const [yellowPolygons, setYellowPolygons] = useState([]);
   const [bounds, setBounds] = useState(null);
@@ -419,6 +436,8 @@ function RealMapView({ property }) {
         zoomSnap={1}
         style={{ height: '100%', width: '100%' }}
       >
+        {/* Recalcula tamanho quando visível (mobile) */}
+        <MapResizer isVisible={isVisible} />
         {/* Camada Base - OpenStreetMap */}
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

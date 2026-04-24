@@ -202,7 +202,7 @@ function App() {
           />
         </div>
         <div className="mobile-panel" style={{ display: mobileTab === 'mapa' ? 'flex' : 'none' }}>
-          <RealMapView property={selectedProperty} />
+          <RealMapView property={selectedProperty} isVisible={mobileTab === 'mapa'} />
         </div>
         <div className="mobile-panel" style={{ display: mobileTab === 'detalhes' ? 'flex' : 'none' }}>
           <DetailsPanel property={selectedProperty} />
