@@ -8,6 +8,105 @@ const db = new Database(path.join(__dirname, 'itr_car.db'));
 // Habilita foreign keys
 db.pragma('foreign_keys = ON');
 
+// Mesmo mapeamento usado na migração de geometrias (server/migrate_geometries.js)
+const propertyToLoteMapping = {
+  prop_001: 'BA-2902005-AD06AC9BEE924477AA13EFE0908D15E0',
+  prop_002: 'SC-4210100-EA1F3824FC3D4148B83F921E253C6DCD',
+  prop_003: 'RJ-3301009-DC994438D87A4CE29E7EECC060BB792E',
+  prop_004: 'PI-2200806-97CAEADC4E0A46F5BDB3374851967EDB',
+  prop_005: 'PR-4127965-5B8ED84AA1A94E6399506A04DE910B83'
+};
+
+function ensureGeometryWktColumn() {
+  try {
+    db.exec('ALTER TABLE properties ADD COLUMN geometry_wkt TEXT;');
+    console.log('✓ Coluna geometry_wkt adicionada');
+  } catch (e) {
+    if (String(e?.message || '').includes('duplicate column name')) {
+      // já existe
+    } else {
+      throw e;
+    }
+  }
+}
+
+function extractGeometryFromCleanJson(geometryData, loteId) {
+  const loteData = geometryData?.[loteId];
+  const resultados = loteData?.result;
+  if (!Array.isArray(resultados)) return null;
+
+  // Prioridade de temas para pegar a geometria
+  const temaPrioridade = [
+    'Área do Imovel',
+    'Área Líquida do Imóvel',
+    'APP Total',
+    'Área Consolidada',
+    'Área de Reserva Legal Total',
+    'Reserva Legal Proposta'
+  ];
+
+  for (const tema of temaPrioridade) {
+    for (const item of resultados) {
+      if (item?.tema === tema && typeof item?.geoareatema === 'string' && item.geoareatema.trim()) {
+        return item.geoareatema;
+      }
+    }
+  }
+
+  // Se não encontrou, pega o primeiro que tiver geometria (geoareatema ou areatotal)
+  for (const item of resultados) {
+    if (typeof item?.geoareatema === 'string' && item.geoareatema.trim()) {
+      return item.geoareatema;
+    }
+    if (typeof item?.areatotal === 'string' && item.areatotal.trim()) {
+      return item.areatotal;
+    }
+    if (typeof item?.poligonoAreaImovel === 'string' && item.poligonoAreaImovel.trim()) {
+      return item.poligonoAreaImovel;
+    }
+  }
+
+  return null;
+}
+
+function migrateMissingGeometriesIfNeeded() {
+  ensureGeometryWktColumn();
+
+  const jsonPath = path.join(__dirname, '..', 'terrein search', 'imovel_dados_clean.json');
+  if (!require('fs').existsSync(jsonPath)) {
+    console.log('ℹ️  imovel_dados_clean.json não encontrado; pulando migração de geometry_wkt');
+    return;
+  }
+
+  let geometryData;
+  try {
+    geometryData = JSON.parse(require('fs').readFileSync(jsonPath, 'utf-8'));
+  } catch (e) {
+    console.log('ℹ️  Falha ao ler imovel_dados_clean.json; pulando migração de geometry_wkt');
+    return;
+  }
+
+  const selectStmt = db.prepare('SELECT geometry_wkt FROM properties WHERE id = ?');
+  const updateStmt = db.prepare('UPDATE properties SET geometry_wkt = ? WHERE id = ?');
+
+  let updated = 0;
+  for (const [propId, loteId] of Object.entries(propertyToLoteMapping)) {
+    const current = selectStmt.get(propId);
+    const alreadyHas = typeof current?.geometry_wkt === 'string' && current.geometry_wkt.trim();
+    if (alreadyHas) continue;
+
+    const wkt = extractGeometryFromCleanJson(geometryData, loteId);
+    if (typeof wkt === 'string' && wkt.trim()) {
+      updateStmt.run(wkt, propId);
+      updated++;
+    }
+  }
+
+  if (updated > 0) {
+    console.log(`✓ geometry_wkt preenchido para ${updated} propriedade(s)`);
+  }
+}
+
 /**
  * Cria as tabelas do banco de dados
  */
@@ -368,6 +467,7 @@ function rowToProperty(row) {
 // Inicializa e popula o banco
 initializeDatabase();
 seedDatabase();
+migrateMissingGeometriesIfNeeded();
 
 module.exports = {
   db,

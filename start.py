@@ -93,7 +93,7 @@ def check_database():
 def start_backend():
     """Inicia o servidor backend"""
     print_header("📡 INICIANDO SERVIDOR BACKEND (API)", Colors.CYAN)
-    print_colored("  Porta: http://localhost:5000", Colors.WHITE)
+    print_colored("  Porta: http://localhost:3001", Colors.WHITE)
     print_colored("  Status: Iniciando...\n", Colors.YELLOW)
     
     # Determina o shell apropriado baseado no OS

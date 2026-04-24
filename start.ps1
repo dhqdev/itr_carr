@@ -26,7 +26,7 @@ Write-Host "=" * 60 -ForegroundColor Cyan
 Write-Host "  📡 SERVIDOR BACKEND (API)" -ForegroundColor Cyan
 Write-Host "=" * 61 -ForegroundColor Cyan
 Write-Host ""
-Write-Host "  Porta: http://localhost:5000" -ForegroundColor White
+Write-Host "  Porta: http://localhost:3001" -ForegroundColor White
 Write-Host "  Status: Iniciando..." -ForegroundColor Yellow
 Write-Host ""
 Write-Host "=" * 61 -ForegroundColor Cyan

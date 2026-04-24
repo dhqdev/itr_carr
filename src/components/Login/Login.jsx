@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { User, Lock, Eye, EyeOff, AlertCircle } from 'lucide-react';
+import API_BASE from '../../config/apiConfig';
 import './Login.css';
 
 const Login = ({ onLogin }) => {
@@ -17,7 +18,7 @@ const Login = ({ onLogin }) => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch(`${API_BASE}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
